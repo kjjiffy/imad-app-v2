@@ -4,19 +4,49 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articleOne = {
-  title: 'Article One | Jiffy Joseph',  
-  heading: 'Article One',
-  date: 'February 11 2017',
-  content: `<p>
-                    This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                </p>
-                <p>
-                    This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                </p>
-                <p>
-                    This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                </p>`
+var article = {
+    article-one: {
+      title: 'Article One | Jiffy Joseph',  
+      heading: 'Article One',
+      date: 'February 11 2017',
+      content: `<p>
+                        This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>
+                    <p>
+                        This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>
+                    <p>
+                        This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>`
+    },
+    article-two: {
+      title: 'Article Two | Jiffy Joseph',  
+      heading: 'Article Two',
+      date: 'February 12 2017',
+      content: `<p>
+                        This is the content of my 2nd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>
+                    <p>
+                        This is the content of my 2nd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>
+                    <p>
+                        This is the content of my 2nd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>`
+    },
+    article-three: {
+      title: 'Article Three | Jiffy Joseph',  
+      heading: 'Article Three',
+      date: 'February 13 2017',
+      content: `<p>
+                        This is the content of my 3rd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>
+                    <p>
+                        This is the content of my 3rd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>
+                    <p>
+                        This is the content of my 3rd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
+                    </p>`
+    }
 };
 function createTemplate (data) {
     var title = data.title;
@@ -55,8 +85,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article_one', function(req, res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function(req, res){
+    var articleName = req.param.articleName;
+    res.send(createTemplate(articleName));
 });
 app.get('/article_two', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'article_two.html'));
