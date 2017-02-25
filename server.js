@@ -81,6 +81,7 @@ function createTemplate (data) {
                         <input type = 'submit' value = 'submit' id = 'submit-comment'></input>
                         <hr/>
                         <ul id = 'commentlist'>
+                        
                         </ul>
                     </div>
                 </div>
