@@ -35,7 +35,6 @@ submit.onclick = function() {
                 }
                 var ul = document.getElementById('namelist');
                 ul.innerHTML = list;
-                var request = new XMLHttpRequest();
             }
         }
     };
