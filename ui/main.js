@@ -43,7 +43,6 @@ submit.onclick = function() {
     request.send(null);
 };
 
-var commentInput = document.getElementById('comment');
 var submitcomment = document.getElementById('submit-comment');
 submitcomment.onclick = function() {
     var request = new XMLHttpRequest();
@@ -61,6 +60,7 @@ submitcomment.onclick = function() {
             }
         }
     };
+    var commentInput = document.getElementById('comment');
     var comment = commentInput.value;
     request.open('GET', 'http://kjjiffy.imad.hasura-app.io/submit-comments?comment=' + comment, true);
     request.send(null);
