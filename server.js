@@ -110,7 +110,6 @@ app.get('/submit-name', function (req, res) {
 
 var comments = [];
 app.get('/submit-comments', function (req, res) {
-    console.log("njan ethi");
     var comment = req.query.comment;
     comments.push(comment);
     res.send(JSON.stringify(comments));
