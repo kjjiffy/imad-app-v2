@@ -1,3 +1,6 @@
+
+
+
 var submitcomment = document.getElementById('submit-comment');
 submitcomment.onclick = function() {
     var request = new XMLHttpRequest();
