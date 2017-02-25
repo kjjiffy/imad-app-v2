@@ -44,7 +44,7 @@ submit.onclick = function() {
 };
 
 var commentInput = document.getElementById('comment');
-var submitcomment = document.getElementById('submit_comment');
+var submitcomment = document.getElementById('submit-comment');
 submitcomment.onclick = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -56,8 +56,8 @@ submitcomment.onclick = function() {
                 for (var i = 0; i < comments.length; i++) {
                     list += '<li>' + comments[i] + '</li>';
                 }
-                var ul = document.getElementById('commentlist');
-                ul.innerHTML = list;
+                var ulcomment = document.getElementById('commentlist');
+                ulcomment.innerHTML = list;
             }
         }
     };
