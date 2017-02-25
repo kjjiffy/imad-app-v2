@@ -44,8 +44,8 @@ submit.onclick = function() {
 };
 
 var commentInput = document.getElementById('comment');
-var submit = document.getElementById('submit_comment');
-submit.onclick = function() {
+var submitcomment = document.getElementById('submit_comment');
+submitcomment.onclick = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
