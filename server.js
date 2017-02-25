@@ -79,7 +79,8 @@ function createTemplate (data) {
                     <div class = 'footer'>
                         <input type = 'text' id = 'comment' placeholder = 'comment'></input>
                         <input type = 'submit' value = 'submit' id = 'submit_comment'></input>
-                
+                        <ul id = 'commentlist'>
+                        </ul>
                     </div>
                 </div>
             </body>
@@ -106,7 +107,7 @@ app.get('/submit-name', function (req, res) {
 });
 
 var comments = [];
-app.get('/:articleName/submit-comments', function (req, res) {
+app.get('/submit-comments', function (req, res) {
     var name = req.query.comments;
     names.push(comments);
     res.send(JSON.stringify(comments));
