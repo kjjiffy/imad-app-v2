@@ -39,7 +39,7 @@ submit.onclick = function() {
         }
     };
     var name = nameInput.value;
-    request.open('GET', window.location.toString() + '/submit-name?name=' + name, true);
+    request.open('GET', window.location.toString() + 'submit-name?name=' + name, true);
     request.send(null);
 };
 
