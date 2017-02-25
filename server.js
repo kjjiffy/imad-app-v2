@@ -137,6 +137,9 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
+app.get('/ui/discussions.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'discussions.js'));
+});
 
 
 
