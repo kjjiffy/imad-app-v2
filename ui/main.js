@@ -62,6 +62,6 @@ submitcomment.onclick = function() {
         }
     };
     var comment = commentInput.value;
-    request.open('GET', 'http://kjjiffy.imad.hasura-app.io/submit-comment?comment=' + comment, true);
+    request.open('GET', 'http://kjjiffy.imad.hasura-app.io/submit-comments?comment=' + comment, true);
     request.send(null);
 };
