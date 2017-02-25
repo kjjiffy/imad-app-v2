@@ -22,7 +22,7 @@ button.onclick = function() {
 var nameInput = document.getElementById('name');
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
-    console.log(window.location.pathname);
+    console.log(window.location.pathname.toString());
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
@@ -44,7 +44,7 @@ submit.onclick = function() {
 };
 
 var commentInput = document.getElementById('comment');
-var submit = document.getElementById('submit_btn');
+var submit = document.getElementById('submit_comment');
 submit.onclick = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
