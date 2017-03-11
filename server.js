@@ -137,8 +137,21 @@ app.get('/submit-comments', function (req, res) {
     
 });
 
-app.get('/:articleName', function(req, res){
+app.get('/articles/:articleName', function(req, res){
     var articleName = req.params.articleName;
+    pool.query("SELECT * FROM test WHERE title = " + req.params.articleName, function(err, result) {
+       if(err) {
+           res.status(500).send(err.toString());
+       } else {
+           if(result.rows.length === 0){
+               res.status(500).send('article not found');
+           } else {
+               var articleData = result.rows[0];
+               res.send(createTemplate.articleData);
+           }
+           
+       }
+    });
     res.send(createTemplate(article[articleName]));
 });
 
