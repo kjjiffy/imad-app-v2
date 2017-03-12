@@ -11,50 +11,7 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
-var article = {
-    'article_one': {
-      title: 'Article One | Jiffy Joseph',  
-      heading: 'Article One',
-      date: 'February 11 2017',
-      content: `<p>
-                        This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>
-                    <p>
-                        This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>
-                    <p>
-                        This is the content of my first article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>`
-    },
-    'article_two': {
-      title: 'Article Two | Jiffy Joseph',  
-      heading: 'Article Two',
-      date: 'February 12 2017',
-      content: `<p>
-                        This is the content of my 2nd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>
-                    <p>
-                        This is the content of my 2nd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>
-                    <p>
-                        This is the content of my 2nd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>`
-    },
-    'article_three': {
-      title: 'Article Three | Jiffy Joseph',  
-      heading: 'Article Three',
-      date: 'February 13 2017',
-      content: `<p>
-                        This is the content of my 3rd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>
-                    <p>
-                        This is the content of my 3rd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>
-                    <p>
-                        This is the content of my 3rd article. I'm really sorry this article has nothing important for anybody, because it is just a trial of my server. Don't get angry, I will publish some valuable content on this page.
-                    </p>`
-    }
-};
+
 function createTemplate (data) {
     var title = data.title;
     var date = data.date;
