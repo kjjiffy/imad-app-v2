@@ -119,8 +119,8 @@ app.get('/hash/:input', function(req, res) {
 });
 
 function hash(input, salt){
-    const hashed = crypto.pbkdf2Sync(input, salt, 3, 512, 'sha512');
-    return hashed.toString('hex');
+    const hashed = crypto.pbkdf2Sync(input, salt, 1000, 512, 'sha512');
+    return ("pbkdf2", "1000", salt, hashed.toString('hex')).join('$');
 }
 
 var counter = 0;
