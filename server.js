@@ -105,6 +105,7 @@ app.post('/login', function(req, res) {
                var hashedPassword = hash(password, salt);
                if(hashedPassword === dbString) {
                    res.send('Credentials are correct');
+                   // set a session so that the user gets logged in
                } else {
                    res.send(403).send('Credentials are invalid');
                }
