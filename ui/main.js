@@ -1,25 +1,27 @@
 
 
 
-var submitcomment = document.getElementById('submit-comment');
-submitcomment.onclick = function() {
+var submit = document.getElementById('submit_btn');
+submit.onclick = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
-                var comments = request.responseText;  
-                comments = JSON.parse(comments);
+                var names = request.responseText;  
+                names = JSON.parse(names);
                 var list = '';
-                for (var i = 0; i < comments.length; i++) {
-                    list += '<li>' + comments[i] + '</li>';
+                for (var i = 0; i < names.length; i++) {
+                    list += '<li>' + names[i] + '</li>';
                 }
-                var ulcomment = document.getElementById('commentlist');
+                var ulcomment = document.getElementById('namelist');
                 ulcomment.innerHTML = list;
             }
         }
     };
-    var commentInput = document.getElementById('comment');
-    var comment = commentInput.value;
-    request.open('GET', 'http://kjjiffy.imad.hasura-app.io/submit-comments?comment=' + comment, true);
-    request.send(null);
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    console.log(username);
+    console.log(username);
+    request.open('POST', 'http://kjjiffy.imad.hasura-app.io/submit-comments?name=' + name, true);
+    request.send(JSON.stringify({username: username, password: password}));
 };
